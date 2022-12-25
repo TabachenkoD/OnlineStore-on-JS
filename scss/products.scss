@@ -1,0 +1,358 @@
+@import "_reset";
+@import "_popup_shopping_cart";
+@import "_vars";
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins&display=swap"); //font-family: 'Poppins', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap"); //font-family: 'Dancing Script', cursive;
+
+body {
+    height: 100%;
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+}
+
+.container {
+    padding: 15px;
+
+    @media (min-width: $device_m) {
+        padding: 15px 60px;
+    }
+
+    @media (min-width: $device_l) {
+        padding: 35px 10%;
+    }
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    header {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "logo btn"
+            "navigation navigation";
+        grid-gap: 10px;
+        z-index: 99;
+        color: $black;
+
+        nav {
+            grid-area: navigation;
+            justify-self: center;
+
+            ul {
+                display: flex;
+
+                li {
+                    a {
+                        color: $black;
+                        text-decoration: none;
+                        font-size: 20px;
+                        padding: 5px 12px;
+                        display: inline-block;
+
+                        &:hover {
+                            box-shadow: 0 1px 6px $black;
+                            border-radius: 3px;
+                        }
+
+                        @media (min-width: $device_l) {
+                            font-size: 22px;
+                        }
+                    }
+                }
+            }
+
+            @media (min-width: $device_m) {
+                justify-self: start;
+                margin-left: -12px;
+            }
+
+            @media (min-width: $device_l) {
+                align-self: center;
+            }
+        }
+
+        h1 {
+            grid-area: logo;
+            font-family: "Dancing Script", cursive;
+            text-shadow: 1px 1px 6px $grey;
+
+            a {
+                color: $black;
+                text-decoration: none;
+                font-size: 36px;
+                letter-spacing: 4px;
+                text-transform: lowercase;
+                padding-bottom: 6px;
+                display: inline-block;
+
+                &:hover {
+                    box-shadow: none;
+                }
+
+                @media (min-width: $device_m) {
+                    font-size: 51px;
+                }
+            }
+
+            @media (min-width: $device_m) {
+                justify-self: center;
+            }
+
+            @media (min-width: $device_l) {
+                justify-self: start;
+                align-self: end;
+            }
+        }
+
+        .shopping_cart {
+            grid-area: btn;
+            color: $black;
+            font-size: 26px;
+            align-self: last baseline;
+            justify-self: end;
+            display: block;
+            padding: 5px 10px;
+            margin-right: -7px;
+            position: relative;
+
+            &:hover {
+                box-shadow: 0 1px 6px $black;
+                border-radius: 3px;
+            }
+
+            @media (min-width: $device_l) {
+                align-self: center;
+            }
+        }
+
+        @media (min-width: $device_m) {
+            grid-template-rows: 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template:
+                "navigation navigation btn"
+                "logo logo logo";
+        }
+
+        @media (min-width: $device_l) {
+            grid-template-columns: auto 1fr 1fr;
+            grid-template: "navigation logo btn";
+        }
+    }
+
+    main {
+        .history {
+            min-width: 100%;
+            padding: 30px 15px;
+            background-color: $background_input;
+            margin: 0 -15px;
+
+            span {
+                color: $blue;
+
+                a {
+                    text-decoration: none;
+                    color: $blue;
+                    font-size: 18px;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            @media (min-width: $device_m) {
+                margin: 0 -60px;
+                padding: 30px 60px;
+            }
+
+            @media (min-width: $device_l) {
+                margin: 0 -15%;
+                padding: 30px 15%;
+            }
+        }
+
+        .main_body {
+            padding-top: 30px;
+            display: flex;
+            flex-direction: column;
+
+            form {
+                padding-bottom: 30px;
+                align-self: center;
+                max-width: 100%;
+
+                input[type="search"] {
+                    background-color: $background_input;
+                    border-radius: 3px;
+                    font-size: 16px;
+                    padding: 5px 12px;
+                    max-width: 100%;
+                }
+
+                .company {
+                    padding: 15px 0;
+
+                    p {
+                        font-size: 16px;
+                        color: $black;
+                        padding-bottom: 10px;
+                    }
+
+                    ul {
+                        padding-left: 15px;
+                        font-size: 16px;
+
+                        li {
+                            padding: 5px;
+
+                            a {
+                                text-decoration: none;
+                                color: $blue;
+
+                                &:hover {
+                                    text-decoration: underline;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .range_input {
+                    display: flex;
+                    flex-direction: column;
+                    font-size: 16px;
+
+                    p {
+                        color: $blue;
+                    }
+
+                    input[type="range"] {
+                        margin: 7px 0;
+                        max-width: 333px;
+                    }
+                }
+
+                @media (min-width: $device_m) {
+                    max-width: 200px;
+                    margin-right: 20px;
+                    align-self: flex-start;
+                }
+            }
+
+            .main_catalog {
+                display: grid;
+                grid-template-columns: 1fr;
+
+                .card_item {
+                    display: flex;
+                    flex-direction: column;
+                    border-radius: 5px;
+                    overflow: hidden;
+                    padding-bottom: 30px;
+                    margin-bottom: 15px;
+
+                    img { 
+                        height: 60vw;
+                        min-width: 200px;
+
+                        @media (min-width: $device_m) {
+                            height: 20vw;
+                        }
+
+                        @media (min-width: 1280px) {
+                            height: 15vw;
+                        }
+
+                        @media (min-width: 1550px) {
+                            height: 12vw;
+                        }
+
+                        @media (min-width: 1800px) {
+                            height: 10vw;
+                        }
+                    }
+
+                    ul {
+                        font-size: 16px;
+                        padding-top: 20px;
+                        align-self: center;
+                        text-align: center;
+                        letter-spacing: 1px;
+
+                        li:first-child {
+                            color: $grey;
+                            padding-bottom: 8px;
+                        }
+
+                        li:last-child {
+                            font-weight: 700;
+
+                            &::before {
+                                content: "\0024";
+                            }
+                        }
+
+                        @media (min-width: $device_l) {
+                            font-size: 22px;
+                        }
+                    }
+
+                    div {
+                        height: 40px;
+                        margin: 0 auto;
+
+                        button {
+                            width: 150px;
+                            color: $white;
+                            text-transform: uppercase;
+                            align-self: center;
+                            display: none;
+                            font-size: 16px;
+                            margin-top: 20px;
+                            background-color: $button_bacground;
+                            border-radius: 3px;
+                            padding: 3px 18px;
+                            border: 1px solid $button_bacground;
+                            transition: background-color .5s;
+                            will-change: background-color;
+
+                            a {
+                                color: $white;
+                            }
+
+                            &:hover {
+                                background-color: $button_bacground_hover;
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        box-shadow: 0 1px 6px $grey;
+                    }
+
+                    &:hover button {
+                        display: block;
+                    }
+                }
+
+                @media (min-width: $device_l) {
+                    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+                    grid-gap: 1rem;
+                    flex: 0 1 100%;
+                }
+
+                .hide {
+                    display: none;
+                }
+            }
+
+            @media (min-width: $device_m) {
+                flex-direction: row;
+            }
+        }
+    }
+}

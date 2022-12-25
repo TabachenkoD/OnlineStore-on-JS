@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Task 2.8</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <script src="https://kit.fontawesome.com/fdd9e03c30.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/products.css" />
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="container">
+            <nav>
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="./about.html">About</a></li>
+                </ul>
+            </nav>
+            <h1><a href="./index.html" id="header_logo"><span>comfy</span></a></h1>
+            <a href="#" class="shopping_cart"><i class="fa-solid fa-cart-shopping"></i>
+                <div class="mask"><span class="count-item"></span></div>
+            </a>
+        </header>
+        <main class="container">
+            <section class="history">
+                <span><a href="./index.html">Home</a> / <a href="#">Products</a></span>
+            </section>
+            <section class="main_body">
+                <form>
+                    <input type="search" placeholder="Search...">
+                    <nav class="company">
+                        <p>Company</p>
+                        <ul>
+                            <li><a href="#">All</a></li>
+                            <li><a href="#">Ikea</a></li>
+                            <li><a href="#">Marcos</a></li>
+                            <li><a href="#">Caressa</a></li>
+                            <li><a href="#">Liddy</a></li>
+                        </ul>
+                    </nav>
+                    <div class="range_input">
+                        <label for="range">Price</label>
+                        <input type="range" id="range" min="0" max="200">
+                        <p>Value : <span class="range_value"></span></p>
+                    </div>
+                </form>
+                <div class="main_catalog"></div>
+            </section>
+        </main>
+    </div>
+    <div class="popup_shopping_cart">
+        <div class="popup_shopping_cart_body">
+            <a href="#"><i class="fa-solid fa-xmark" data-id="popupShoppingCartClosed"></i></a>
+            <h3>Your Bag</h3>
+            <div class="popup_shopping_cart_content"></div>
+            <h3>Total : <span class="total_count">0</span></h3>
+            <button>Checkout</button>
+        </div>
+    </div>
+    <script src="./js/shoppingCart.js"></script>
+    <script src="./js/products.js"></script>
+</body>
+
+</html>

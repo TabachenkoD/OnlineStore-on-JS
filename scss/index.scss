@@ -1,0 +1,365 @@
+@import "_reset";
+@import "_popup_shopping_cart";
+@import "_vars";
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins&display=swap"); //font-family: 'Poppins', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap"); //font-family: 'Dancing Script', cursive;
+
+body {
+    height: 100%;
+    font-family: "Poppins", sans-serif;
+}
+
+.container {
+    padding: 15px;
+
+    @media (min-width: $device_m) {
+        padding: 15px 60px;
+    }
+
+    @media (min-width: $device_l) {
+        padding: 35px 10%;
+    }
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    header {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "logo btn"
+            "navigation navigation";
+        grid-gap: 10px;
+        z-index: 99;
+        color: $white;
+
+        nav {
+            grid-area: navigation;
+            justify-self: center;
+
+            ul {
+                display: flex;
+
+                li {
+                    a {
+                        color: $white;
+                        text-decoration: none;
+                        font-size: 20px;
+                        padding: 5px 12px;
+                        display: inline-block;
+                        text-shadow: 1px 1px 2px $black;
+
+                        &:hover {
+                            box-shadow: 0 1px 6px $white;
+                            border-radius: 3px;
+                        }
+
+                        @media (min-width: $device_l) {
+                            font-size: 22px;
+                        }
+                    }
+                }
+            }
+
+            @media (min-width: $device_m) {
+                justify-self: start;
+                margin-left: -12px;
+            }
+
+            @media (min-width: $device_l) {
+                align-self: center;
+            }
+        }
+
+        h1 {
+            grid-area: logo;
+            font-family: "Dancing Script", cursive;
+            text-shadow: 1px 1px 6px $black;
+
+            a {
+                color: $white;
+                text-decoration: none;
+                font-size: 36px;
+                letter-spacing: 4px;
+                text-transform: lowercase;
+                padding-bottom: 6px;
+                display: inline-block;
+
+                &:hover {
+                    box-shadow: none;
+                }
+
+                @media (min-width: $device_m) {
+                    font-size: 51px;
+                }
+            }
+
+            @media (min-width: $device_m) {
+                justify-self: center;
+            }
+
+            @media (min-width: $device_l) {
+                justify-self: start;
+                align-self: end;
+            }
+        }
+
+        .shopping_cart {
+            grid-area: btn;
+            color: $white;
+            font-size: 26px;
+            align-self: last baseline;
+            justify-self: end;
+            display: block;
+            padding: 5px 10px;
+            margin-right: -7px;
+            position: relative;
+
+            &:hover {
+                box-shadow: 0 1px 6px $white;
+                border-radius: 3px;
+            }
+
+            @media (min-width: $device_l) {
+                align-self: center;
+            }
+        }
+
+        @media (min-width: $device_m) {
+            grid-template-rows: 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template:
+                "navigation navigation btn"
+                "logo logo logo";
+        }
+
+        @media (min-width: $device_l) {
+            grid-template-columns: auto 1fr 1fr;
+            grid-template: "navigation logo btn";
+        }
+    }
+
+    main {
+        .fullscreen {
+            min-height: 50vh;
+            background: url("../img/mainScreen.jpg") no-repeat;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            margin-top: -135px;
+
+            .fullscreen_body {
+                color: $white;
+                padding-bottom: 50px;
+                display: inline-flex;
+                flex-direction: column;
+                justify-content: center;
+                text-shadow: 1px 1px 2px $black;
+
+                h2 {
+                    font-family: "Dancing Script", cursive;
+                    font-size: 36px;
+                    padding-bottom: 40px;
+                }
+
+                h3 {
+                    font-size: 22px;
+                    padding-bottom: 30px;
+                }
+
+                button {
+                    width: 150px;
+                    color: $white;
+                    background-color: rgba($white, 0);
+                    border: 2px solid $white;
+                    font-size: 16px;
+                    text-transform: uppercase;
+                    transition: background-color .5s;
+                    will-change: background-color;
+
+                    &:hover {
+                        background-color: rgba($white, .3);
+                    }
+                }
+
+                @media (min-width: $device_m) {
+                    h2 {
+                        font-size: 76px;
+                    }
+
+                    h3 {
+                        font-size: 42px;
+                        padding-bottom: 40px;
+                    }
+
+                    button {
+                        width: 200px;
+                        font-size: 24px;
+                    }
+                }
+            }
+
+            @media (min-width: $device_m) {
+                min-height: calc(100vh + 9px);
+                justify-content: center;
+            }
+        }
+
+        .featured {
+            padding-top: 40px;
+            padding-bottom: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+
+            h2 {
+                font-size: 22px;
+
+                &::before {
+                    content: "/";
+                    font-size: 18px;
+                    font-weight: 700;
+                    padding-right: 5px;
+                    color: $button_bacground;
+                }
+            }
+
+            .featured_body {
+                padding-top: 30px;
+                min-width: 100%;
+                display: grid;
+
+                .card_item {
+                    display: flex;
+                    flex-direction: column;
+                    border-radius: 5px;
+                    overflow: hidden;
+                    padding-bottom: 30px;
+                    margin-bottom: 15px;
+
+                    img {
+                        height: 60vw;
+                        min-width: 200px;
+
+                        @media(min-width: $device_m){
+                            height: 20vw;
+                        }
+
+                        @media(min-width: 1280px){
+                            height: 15vw;
+                        }
+
+                        @media(min-width: 1550px){
+                            height: 12vw;
+                        }
+
+                        @media(min-width: 1800px){
+                            height: 10vw;
+                        }
+                    }
+
+                    ul {
+                        font-size: 16px;
+                        padding-top: 20px;
+                        align-self: center;
+                        text-align: center;
+                        letter-spacing: 1px;
+
+                        li:first-child {
+                            color: $grey;
+                            padding-bottom: 8px;
+                        }
+
+                        li:last-child {
+                            font-weight: 700;
+
+                            &::before {
+                                content: "\0024";
+                            }
+                        }
+
+                        @media (min-width: $device_l) {
+                            font-size: 22px;
+                        }
+                    }
+
+                    div {
+                        height: 40px;
+                        margin: 0 auto;
+
+                        button {
+                            width: 150px;
+                            color: $white;
+                            text-transform: uppercase;
+                            align-self: center;
+                            display: none;
+                            font-size: 16px;
+                        }
+                    }
+
+                    &:hover {
+                        box-shadow: 0 1px 6px $grey;
+                    }
+
+                    &:hover button {
+                        display: block;
+                    }
+                }
+
+                @media (min-width: $device_m) {
+                    grid-template-columns: minmax(200px, 1fr) minmax(200px, 1fr) minmax(200px, 1fr);
+                    grid-gap: 1rem;
+                    padding-top: 80px;
+                    margin-bottom: 0;
+                }
+            }
+
+            button {
+                margin-top: 20px;
+                background-color: $button_bacground;
+                border-radius: 3px;
+                font-size: 16px;
+                padding: 3px 18px;
+                text-transform: uppercase;
+                border: 1px solid $button_bacground;
+                transition: background-color .5s;
+                will-change: background-color;
+
+                a {
+                    color: $white;
+                }
+
+                &:hover {
+                    background-color: $button_bacground_hover;
+                }
+
+                @media (min-width: $device_m) {
+                    font-size: 26px;
+                    padding: 5px 24px;
+                }
+            }
+
+            @media (min-width: $device_m) {
+                h2 {
+                    font-size: 38px;
+
+                    &::before {
+                        content: "/";
+                        font-size: 32px;
+                        padding-right: 5px;
+                        color: $button_bacground;
+                    }
+                }
+            }
+        }
+    }
+}

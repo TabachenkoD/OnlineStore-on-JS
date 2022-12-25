@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Task 2.8</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<script src="https://kit.fontawesome.com/fdd9e03c30.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="./css/index.css" />
+	<meta charset="UTF-8">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="container">
+			<nav>
+				<ul>
+					<li><a href="./index.html">Home</a></li>
+					<li><a href="./products.html">Products</a></li>
+					<li><a href="./about.html">About</a></li>
+				</ul>
+			</nav>
+			<h1><a href="./index.html" id="header_logo"><span>comfy</span></a></h1>
+			<a href="#" class="shopping_cart"><i class="fa-solid fa-cart-shopping"></i>
+				<div class="mask"><span class="count-item"></span></div>
+			</a>
+		</header>
+		<main>
+			<section class="fullscreen">
+				<div class="fullscreen_body container">
+					<h2>Rest, Relax, Unwind</h2>
+					<h3>Embrace your choices - we do</h3>
+					<button>Show Now</button>
+				</div>
+			</section>
+			<section class="featured container">
+				<h2>Featured</h2>
+				<div class="featured_body"></div>
+				<button><a href="./products.html">All Products</a></button>
+			</section>
+		</main>
+	</div>
+	<div class="popup_shopping_cart">
+		<div class="popup_shopping_cart_body">
+			<a href="#"><i class="fa-solid fa-xmark" data-id="popupShoppingCartClosed"></i></a>
+			<h3>Your Bag</h3>
+			<div class="popup_shopping_cart_content"></div>
+			<h3>Total : <span class="total_count">0</span></h3>
+			<button>Checkout</button>
+		</div>
+	</div>
+	<script src="./js/shoppingCart.js"></script>
+	<script src="./js/index.js"></script>
+</body>
+
+</html>

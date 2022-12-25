@@ -1,0 +1,58 @@
+[
+  {
+    "name": "High-Back Bench",
+    "cost": 9.99,
+    "img": "./img/cardImage_1.jpg",
+    "company": "Ikea",
+    "amount": 1
+  },
+  {
+    "name": "Ingatorp",
+    "cost": 19.77,
+    "img": "./img/cardImage_2.jpg",
+    "company": "Ikea",
+    "amount": 1
+  },
+  {
+    "name": "Norden Terje",
+    "cost": 15.33,
+    "img": "./img/cardImage_3.jpg",
+    "company": "Marcos",
+    "amount": 1
+  },
+  {
+    "name": "Melltorp Teodores",
+    "cost": 26,
+    "img": "./img/cardImage_4.jpg",
+    "company": "Marcos",
+    "amount": 1
+  },
+  {
+    "name": "Laneberg Stefan",
+    "cost": 58.99,
+    "img": "./img/cardImage_1.jpg",
+    "company": "Caressa",
+    "amount": 1
+  },
+  {
+    "name": "Docksta Tobias",
+    "cost": 39.77,
+    "img": "./img/cardImage_2.jpg",
+    "company": "Caressa",
+    "amount": 1
+  },
+  {
+    "name": "Sandsberg",
+    "cost": 51,
+    "img": "./img/cardImage_3.jpg",
+    "company": "Liddy",
+    "amount": 1
+  },
+  {
+    "name": "Ekedalen Bergmund",
+    "cost": 77,
+    "img": "./img/cardImage_4.jpg",
+    "company": "Liddy",
+    "amount": 1
+  }
+]
